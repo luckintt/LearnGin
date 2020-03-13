@@ -1,0 +1,11 @@
+{{template "header.html" .}}
+    {{range .payload}}  <!--文章列表通过变量payload传递到模板index.html中。  这里循环遍历文章离别-->
+        <!--Create the link for the article based on its ID-->
+        <a href="/article/view/{{.ID}}">  <!--跳转到每一篇文章对应的超链接-->
+            <!--Display the title of the article -->
+            <h2>{{.Title}}</h2>
+        </a>
+        <!--Display the content of the article-->
+        <p>{{.Content}}</p>
+    {{end}}
+{{template "footer.html" .}}
